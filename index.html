@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <div v-if="formActive" id="cardForm">
+        <fieldset>
+            <legend>Карточка клиента</legend>
+            <input v-model="carNumber" id="carNumber" placeholder="Гос. номер" type="text">
+            <br>
+            <input v-model="carBrand" id="carBrand" placeholder="Марка авто" type="text">
+            <br>
+            <input v-model="clientName" id="clientName" placeholder="ФИО владельца" type="text">
+            <br>
+            <input v-model="clientTel" id="clientTel" placeholder="Телефон владельца" type="tel">
+            <br>
+            <label for="typeWork">Вид работ:</label>
+            <select v-model="typeWork" id="typeWork">
+                <option value="repair">Ремонт</option>
+                <option value="maintenance">ТО</option>
+            </select>
+            <br>
+            <label for="master">Назначен мастер:</label>
+            <select v-model="master" id="master">
+                <option value="Ivanov">Иванов</option>
+                <option value="Petrov">Петров</option>
+                <option value="Sidorov">Сидоров</option>
+            </select>
+            <br>
+            <input v-model="price" id="price" placeholder="Цена" type="number">
+            <br>
+            <textarea v-model="comments" placeholder="Комментарий" id="comments" cols="100" rows="1"></textarea>
+            <button v-on:click="addClient" id="addClient">Добавить клиента</button>
+        </fieldset>
+    </div>
+
+    <button v-on:click="addCar" id="addCar">Добавить автомобиль</button>
+    <button v-on:click="cancel" id="cancel">Отмена</button>
+
+    <ol id="clientsList">
+        <li v-for="client in clients">
+            Имя клиента:{{client.clientName}}, Номер телефона:{{client.clientTel}}, Марка автомобиля:
+            {{client.carBrand}}, Гос. номер:{{client.carNumber}}, Вид работ:{{client.typeWork}},
+            Назначен мастер:{{client.master}}, Цена: {{client.price}} &#36, Комментарий: {{client.comments}}.
+        </li>
+
+    </ol>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

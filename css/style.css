@@ -1,0 +1,44 @@
+body {
+    background-color: wheat;
+}
+
+#cardForm {
+    text-align: center;
+
+}
+
+legend {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
+#addCar {
+    width: 200px;
+    height: 50px;
+    background-color: #107f1d;
+    border-radius: 50px;
+    border: 1px solid wheat;
+    outline: none;
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 30px auto;
+}
+
+#cancel {
+    width: 200px;
+    height: 50px;
+    background-color: #af2525;
+    border-radius: 50px;
+    border: 1px solid rgba(76, 75, 72, 0);
+    outline: none;
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 30px auto;
+    vertical-align: top;
+}
+#comments {
+    vertical-align: bottom;
+}
+
